@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Head Tail App</title>
+
+  <!-- ✅ SEO Tags Start -->
+  <meta name="description" content="Head Tail একটি টাকা ইনকাম করার অ্যাপ। এই অ্যাপের ভিতর Head Tail গেম খেলে সহজেই অনেক টাকা আর্নিং করতে পারবেন। এছাড়া এই অ্যাপের ভিতর রেফার করে টাকা ইনকাম করার সুযোগ ও আছে।">
+  <meta name="keywords" content="Head Tail, headtail, head tail, earn money, earning game, টাকা ইনকাম, ইনকাম করার অ্যাপ, সহজে টাকা ইনকাম">
+  <meta name="author" content="Alone boy">
+
+  <!-- Open Graph for Facebook -->
+  <meta property="og:title" content="Head Tail - Trusted Earning game in Bangladesh" />
+  <meta property="og:description" content="এই অ্যাপের ভিতর Head Tail গেম খেলে সহজেই অনেক টাকা আর্নিং করতে পারবেন।। Head Tail app এখনই ডাউনলোড করুন।" />
+  <meta property="og:image" content="https://res.cloudinary.com/daseyqhav/image/upload/v1757239627/Head_tail_icon_o3blhu.jpg" />
+  <meta property="og:url" content="https://headtail.xchangebd.xyz/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Head Tail - Trusted Earning game in Bangladesh" />
+  <meta name="twitter:description" content="এই অ্যাপের ভিতর Head Tail গেম খেলে সহজেই অনেক টাকা আর্নিং করতে পারবেন।। Head Tail app এখনই ডাউনলোড করুন।" />
+  <meta name="twitter:image" content="https://res.cloudinary.com/daseyqhav/image/upload/v1757239627/Head_tail_icon_o3blhu.jpg" />
+  <!-- ✅ SEO Tags End -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212;
+      color: #ffffff;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .app-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .app-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      margin-right: 15px;
+    }
+    .app-title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .app-company {
+      font-size: 14px;
+      color: #bbb;
+    }
+    .meta-info {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+    .install-button {
+      background-color: #1e88e5;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      width: 100%;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    .install-button:hover {
+      background-color: #1565c0;
+    }
+    .section-title {
+      font-size: 18px;
+      margin: 20px 0 10px;
+    }
+    .about-text {
+      background-color: #1f1f1f;
+      padding: 15px;
+      border-radius: 8px;
+      min-height: 60px;
+      position: relative;
+    }
+    .fade {
+      position: absolute;
+      bottom: 10px; /* নিচে একটু নেমেছে */
+      left: 0;
+      right: 0;
+      height: 40px;
+      background: linear-gradient(transparent, #1f1f1f);
+      pointer-events: none; /* ক্লিক ব্লক করতেছে, তাই এইটা দিলাম */
+    }
+    .read-more {
+      color: #1e88e5;
+      cursor: pointer;
+      margin-top: 10px; /* আগের থেকে একটু নিচে নেমেছে */
+      display: inline-block;
+    }
+
+    /* Screenshot section updated */
+    .screenshots {
+      white-space: nowrap;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+    .screenshots img {
+      height: 200px;
+      margin-right: 20px;
+      display: inline-block;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .screenshots img:last-child {
+      margin-right: 0;
+    }
+
+    /* Modal for image popup */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .modal img {
+      max-width: 90%;
+      max-height: 80%;
+      display: block;
+      margin: 5% auto;
+      border-radius: 10px;
+    }
+
+    .rating-section {
+      margin-top: 20px;
+    }
+    .average-rating {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .star-display {
+      font-size: 24px;
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+    .review {
+      background-color: #1f1f1f;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .review-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .see-more {
+      text-align: center;
+      color: #1e88e5;
+      cursor: pointer;
+      margin: 20px 0;
+    }
+    .see-more:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="app-header">
+      <img src="https://res.cloudinary.com/daseyqhav/image/upload/v1771912388/no_bg_icon_qnmxyp.png" alt="App Icon" class="app-icon" />
+      <div>
+        <div class="app-title">CCTV Online Admin</div>
+        <div class="app-company">Developed by Alone boy</div>
+      </div>
+    </div>
+
+    <div class="meta-info">
+      <div>3M+ downloads</div>
+      <div>10 MB</div>
+    </div>
+
+    <a href="https://github.com/cctvonline1/app/raw/refs/heads/main/CCTVAdmin.apk" download>
+      <button class="install-button">Download APK</button>
+    </a>
+
+    <div class="section-title">Screenshots</div>
+    <div class="screenshots">
+      <img
+        src="https://cdn.aptoide.com/imgs/b/5/0/b504e579f1973ad4bae69f25cd4b4f9e_screen.jpg"
+        alt="Screenshot 1"
+        onclick="openModal(this.src)"
+      />
+      <img
+        src="https://cdn.aptoide.com/imgs/3/9/3/3932f8843fc2b6c5eae298c91b1b5548_screen.jpg"
+        alt="Screenshot 2"
+        onclick="openModal(this.src)"
+      />
+      <img
+        src="https://cdn.soft112.com/wifi-router-setup-wifi-manager-speed-test-app/00/00/0H/GQ/00000HGQ6R/pad_screenshot.png"
+        alt="Screenshot 3"
+        onclick="openModal(this.src)"
+      />
+    </div>
+
+    <div class="section-title">About this app</div>
+    <div class="about-text" id="aboutText">
+      <div id="aboutShort">
+        <p><b>Head Tail</b> অ্যাপের মাধ্যমে আপনি হেড টেল খেলে ও রেফার করে টাকা উপার্জন করতে পারবেন। </p>
+        <p>উপার্জিত টাকা বিকাশ, নগদ অথবা রকেট একাউন্টে উত্তোলন করতে পারবেন।</p>
+      </div>
+      <div id="aboutFull" style="display: none">
+        <p><b>Head Tail</b> অ্যাপের মাধ্যমে আপনি হেড টেল খেলে ও রেফার করে টাকা উপার্জন করতে পারবেন। </p>
+        <p>উপার্জিত টাকা বিকাশ, নগদ অথবা রকেট একাউন্টে উত্তোলন করতে পারবেন।</p>
+
+        <p><b>✨ মূল ফিচারসমূহ:</b></p>
+        <ul>
+          <li>
+            <b>💰 ডিপোজিট বোনাস সমূহ</b>
+            <ul>
+              <li>৳২০০ ডিপোজিট ➜ ৳৫০ বোনাস (মোট ৳২৫০)</li>
+              <li>৳৩০০ ডিপোজিট ➜ ৳১০০ বোনাস (মোট ৳৪০০)</li>
+              <li>৳৪০০ ডিপোজিট ➜ ৳২০০ বোনাস (মোট ৳৬০০)</li>
+              <li>৳৫০০ ডিপোজিট ➜ ৳৩০০ বোনাস (মোট ৳৮০০)</li>
+              <li>৳১০০০ ডিপোজিট ➜ ৳৮০০ বোনাস (মোট ৳১৮০০)</li>
+            </ul>
+          </li>
+          <li>
+            <b>👨‍👩‍👧‍👦 রেফার করে ইনকাম</b>
+            <ul>
+              <li>নতুন ইউজারকে সাইন ইন করার সময় আপনার রেফার কোড দিন।</li>
+              <li>রেফারকৃত ইউজার প্রথমবার ডিপোজিট করলে আপনি পাবেন ৳১০০।</li>
+              <li>পরবর্তীতে ইউজার যতবার ডিপোজিট করবে, আপনি পাবেন তার ২০% কমিশন।</li>
+            </ul>
+          </li>
+          <li>
+            <b>💳 উপার্জন করা টাকা উত্তোলন</b>
+            <ul>
+              <li>আপনি যেই পরিমাণ টাকা উপার্জন করবেন, </li>
+              <li>তা বিকাশ, নগদ অথবা রকেটের মাধ্যমে খুব সহজেই উত্তোলন করতে পারবেন।</li>
+            </ul>
+          </li>
+          <li>
+            <b>🛡️ নিরাপত্তা ও বিশ্বাস</b>
+            <ul>
+              <li>Head Tail অ্যাপটি সম্পূর্ণরূপে ম্যানুয়াল পরিচালিত এবং সবার আগে আপনার নিরাপত্তাকে গুরুত্ব দেয়।</li>
+              <li>সব ট্রান্সফার অ্যাডমিন দ্বারা যাচাই করে নিশ্চিত করা হয়।</li>
+            </ul>
+          </li>
+        </ul>
+
+        <p><b>📥 কেন ব্যবহার করবেন?</b></p>
+        <ul>
+          <li>গেম খেলে সময় কাটাতে পারবেন</li>
+          <li>পাশাপাশি অনেক টাকা ইনকাম করতে পারবেন</li>
+          <li>রেফার করেও আয় করতে পারবেন</li>
+          <li>কোন ঝামেলা ছাড়া টাকা সহজে উত্তোলন করতে পারবেন</li>
+        </ul>
+      </div>
+      <div class="fade" id="fadeEffect"></div>
+      <span class="read-more" onclick="toggleAbout()" id="readMore">See more</span>
+    </div>
+
+    <div class="section-title">Ratings & Reviews</div>
+    <div class="rating-section">
+      <div class="average-rating">4.5 ★</div>
+      <div class="star-display">★★★★★</div>
+      <div class="review">
+        <div class="star-display">★★★★★</div>
+        <div class="review-title">Arman Hossain</div>
+        <div class="review-message">অ্যাপটা সত্যিই অসাধারণ! হেড-টেইল গেম খেলে খুব সহজে টাকা ইনকাম করা যায়। আমি কয়েকবার খেলেছি আর উইথড্রও করেছি, একেবারে ইনস্ট্যান্টে bKash এ পেয়েছি।</div>
+      </div>
+      <div class="review">
+        <div class="star-display">★★★★★</div>
+        <div class="review-title">Ritu Akter</div>
+        <div class="review-message">সিম্পল একটা গেম, কিন্তু মজার ব্যাপার হলো সত্যিই টাকা দেয়। withdraw system একদম ঝামেলা ছাড়া কাজ করে। Nagad এও সহজে টাকা পেয়েছি।</div>
+      </div>
+      <div class="review">
+        <div class="star-display">★★★★★</div>
+        <div class="review-title">Mahfuz Rahman</div>
+        <div class="review-message">অনেক অ্যাপ দেখি ফেক হয়, কিন্তু এটা একদম রিয়েল। আমি 2000 টাকা উইন করে bKash এ নিয়েছি। সবাই ট্রাই করতে পারেন।</div>
+      </div>
+      <div class="review">
+        <div class="star-display">★★★★★</div>
+        <div class="review-title">Shila Khatun</div>
+        <div class="review-message">খুবই মজার অ্যাপ! 1 মিনিটেই খেলা যায়, আর জেতার সাথে সাথেই টাকা withdraw করা যায়। দারুণ লাগলো। </div>
+      </div>
+      <div class="review">
+        <div class="star-display">★★★★☆</div>
+        <div class="review-title">Sajib Hasan</div>
+        <div class="review-message">বিশ্বাস করতে পারিনি শুরুতে, কিন্তু সত্যিই টাকা পেয়েছি। Withdraw সিস্টেম ফাস্ট আর কাস্টমার সাপোর্টও ভালো</div>
+      </div>
+      <div class="review">
+        <div class="star-display">★★★★☆</div>
+        <div class="review-title">Nazifa Jahan</div>
+        <div class="review-message">গেমটা খুবই সিম্পল, কিন্তু আসল মজা হলো টাকা জেতার সুযোগ। আমি প্রথম দিনেই 3500 টাকা bKash এ পেলাম।</div>
+      </div>
+      <div class="review">
+        <div class="star-display">★★★★★</div>
+        <div class="review-title">Jannatul Nayeem</div>
+        <div class="review-message">দারুণ একটা আর্নিং অ্যাপ। কোনো এড নেই, কোনো ঝামেলা নেই। খেলুন আর জিতলে সঙ্গে সঙ্গে টাকা withdraw করে নিন।</div>
+      </div>
+      <div class="review">
+        <div class="star-display">★★★★★</div>
+        <div class="review-title">Farid Uddin</div>
+        <div class="review-message">মোবাইল দিয়ে ফ্রি টাইমে এমন আয় করা যায় ভাবিনি। হেড-টেইল খেলেই টাকা earn হচ্ছে। অসাধারণ অ্যাপ!</div>
+      </div>
+      <div class="review">
+        <div class="star-display">★★★★★</div>
+        <div class="review-title">Tarek Aziz</div>
+        <div class="review-message">অনেকদিন ধরে ইউজ করছি, এখন পর্যন্ত কোনো সমস্যা হয়নি। bKash এ withdraw সব সময় সময়মতো পাই। থ্যাঙ্কস ডেভেলপার।</div>
+      </div>
+      <div class="review">
+        <div class="star-display">★★★★★</div>
+        <div class="review-title">Nusrat Tamanna</div>
+        <div class="review-message">এত ছোট একটা গেমে এমন রিয়েল আয় হবে ভাবিনি। Nagad আর bKash দুই একাউন্টেই withdraw করেছি। সত্যিই লিজেন্ডারি অ্যাপ।</div>
+      </div>
+
+      <div class="see-more">See all reviews</div>
+    </div>
+  </div>
+
+  <!-- Modal HTML -->
+  <div class="modal" id="modal" onclick="this.style.display='none'">
+    <img id="modalImage" src="" />
+  </div>
+
+  <script>
+    function toggleAbout() {
+      const shortText = document.getElementById("aboutShort");
+      const fullText = document.getElementById("aboutFull");
+      const readMore = document.getElementById("readMore");
+      const fade = document.getElementById("fadeEffect");
+
+      if (fullText.style.display === "none") {
+        fullText.style.display = "block";
+        shortText.style.display = "none";
+        readMore.textContent = "Show less";
+        fade.style.display = "none";
+      } else {
+        fullText.style.display = "none";
+        shortText.style.display = "block";
+        readMore.textContent = "See more";
+        fade.style.display = "block";
+      }
+    }
+
+    function openModal(src) {
+      document.getElementById("modalImage").src = src;
+      document.getElementById("modal").style.display = "block";
+    }
+  </script>
+</body>
+</html>
